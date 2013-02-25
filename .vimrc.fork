@@ -1,0 +1,28 @@
+" For php debugging
+let g:dbgPavimPort = 9000
+let g:dbgPavimBreakAtEntry = 0
+
+" Set colorscheme to be super kewl
+color molokai
+
+" Get rid of the spell checker.  It's a nice thought, but is more of a pain
+" than anything else
+set nospell
+
+set expandtab
+set tabstop=2                   " An indentation every two columns
+set shiftwidth=2                " Use indents of 2 spaces
+set softtabstop=2               " Let backspace delete indent
+set autoindent
+
+" Tell vim that all these Drupal filetypes are php
+if has("autocmd")
+  augroup module
+    autocmd BufRead,BufNewFile *.module set filetype=php
+    autocmd BufRead,BufNewFile *.install set filetype=php
+    autocmd BufRead,BufNewFile *.test set filetype=php
+    autocmd BufRead,BufNewFile *.inc set filetype=php
+    autocmd BufRead,BufNewFile *.profile set filetype=php
+    autocmd BufRead,BufNewFile *.view set filetype=php
+  augroup END
+endif
